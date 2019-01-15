@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.abdallahmurad.the_project">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_collections_bookmark_black_24dp"
+        android:supportsRtl="true"
+        android:name=".MyApplication2"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.activites.HomeActivity">
+
+
+        </activity>
+        <activity android:name=".view.activites.BookingActivity" />
+        <activity android:name=".view.activites.HotelDataActivity" />
+        <activity android:name=".view.activites.FiltersActivity" />
+        <activity android:name=".view.activites.HotelsPageActivity" />
+        <activity android:name=".view.activites.BookingDetailsActivity" />
+        <activity
+            android:name=".view.activites.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+        </activity>
+        <activity android:name=".view.activites.CommMainActivity" >
+
+        </activity>
+        <activity android:name=".view.activites.ImageActivity">
+
+        </activity>
+        <activity android:name=".view.activites.SignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activites.MyIntroActivity"/>
+        <activity android:name=".view.activites.CommNewPostActivity" />
+        <activity android:name=".view.activites.CommPostDetailActivity" />
+        <service
+            android:name=".controller.MyDownloadService"
+            android:exported="false" />
+        <service
+            android:name=".controller.MyUploadService"
+            android:exported="false" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.com.vansuita.pickimage.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/picker_provider_paths" />
+        </provider>
+    </application>
+</manifest>
